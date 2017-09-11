@@ -12,9 +12,12 @@ object Main extends App {
   }
 
   def countOut(n: Int, k: Int): Either[Throwable, Int] = {
-    val s: List[Int] = (1 to n).toList
-    val circle = Circle(s, n)
-    Circle.play(circle, k)
+    if (k == 0) Left(new Throwable("position 0 is an invalid input"))
+    else {
+      val s: List[Int] = (1 to n).toList
+      val circle = Circle(s, n)
+      Circle.play(circle, k)
+    }
   }
 
 }

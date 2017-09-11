@@ -23,8 +23,8 @@ class CountingOutTest extends FlatSpec with Matchers {
     assert(Main.countOut(1,20) == Right(1))
   }
 
-  it should "return 7th position for n=7, k=0" in {
-    assert(Main.countOut(7,0) == Right(7))
+  it should "return error for k =0 " in {
+    assert(Main.countOut(7,0).isLeft)
   }
 
   it should "return 2th position for n=3, k=10" in {
@@ -41,6 +41,34 @@ class CountingOutTest extends FlatSpec with Matchers {
 
   it should "return 1st position for n=4 k=-1" in {
     assert(Main.countOut(4,-1) == Right(1))
+  }
+
+  it should "return 1st position for n=2 k=2" in {
+    assert(Main.countOut(2,2) == Right(1))
+  }
+
+  it should "return 3rd position for n=3 k=2" in {
+    assert(Main.countOut(3,2) == Right(3))
+  }
+
+  it should "return 1st position for n=4 k=2" in {
+    assert(Main.countOut(4,2) == Right(1))
+  }
+
+  it should "return 3st position for n=5 k=2" in {
+    assert(Main.countOut(5,2) == Right(3))
+  }
+
+  it should "return 5th position for n=6 k=2" in {
+    assert(Main.countOut(6,2) == Right(5))
+  }
+
+  it should "return 7th position for n=7 k=2" in {
+    assert(Main.countOut(7,2) == Right(7))
+  }
+
+  it should "return 1st position for n=8 k=2" in {
+    assert(Main.countOut(8,2) == Right(1))
   }
 
   it should "return exception for n in -ve" in {
