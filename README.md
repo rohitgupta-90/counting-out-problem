@@ -5,8 +5,8 @@
 
 ```
 sbt "run <n> <k>"
-
 ``` 
+
 - n is the number of people on the table
 
 - k is the step rate, (a -ve k indicates counting in anti-clockwise direction)  
